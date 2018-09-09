@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Exambrowser
+GenericName=Indonesian Exam Browser
+Comment=Indonesian Exam Browser
+Exec=exambrowser
+Icon=id.blankon.exambrowser
+Categories=Utility;Education;
+

@@ -1,0 +1,61 @@
+{
+  "app-id" : "id.blankon.exambrowser",
+  "runtime" : "org.freedesktop.Platform",
+  "runtime-version" : "1.6",
+  "sdk" : "org.freedesktop.Sdk",
+  "base" : "io.atom.electron.BaseApp",
+  "base-version": "stable",
+  "command" : "exambrowser",
+  "finish-args" : [
+    "--socket=x11",
+    "--share=ipc",
+    "--device=dri",
+    "--share=network",
+    "--talk-name=org.freedesktop.Notifications"
+  ],
+ "modules": [
+    {
+      "name": "exambrowser",
+      "buildsystem": "simple",
+      "build-commands":[
+        "mkdir -p /app/exambrowser /app/bin",
+        "cp -ra * /app/exambrowser",
+        "ln -s /app/UBNK/exambrowser /app/bin",
+        "mkdir -p /app/share/applications",
+        "cp id.blankon.exambrowser.desktop /app/share/applications",
+        "mkdir -p /app/share/icons/hicolor/128x128/apps /app/share/icons/hicolor/64x64/apps",
+        "cp icon-128x128.png /app/share/icons/hicolor/128x128/apps/id.blankon.exambrowser.png",
+        "cp icon-64x64.png /app/share/icons/hicolor/64x64/apps/id.blankon.exambrowser.png",
+        "mkdir -p /app/share/appdata",
+        "cp id.blankon.exambrowser.appdata.xml /app/share/appdata/"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "http://princeofgiri.com/exambrowser/exambrowser-linux-x64.zip",
+          "sha256": "47dcf99dd0f83ab1060ee4a45c1684047c1866a64c7c7bc7f7e3c45d7372d6e6"
+        },
+        {
+          "type": "file",
+          "path": "icon-128x128.png",
+          "dest-filename": "icon-128x128.png"
+        },
+        {
+          "type": "file",
+          "path": "icon-64x64.png",
+          "dest-filename": "icon-64x64.png"
+        },
+        {
+          "type": "file",
+          "path": "id.blankon.exambrowser.desktop",
+          "dest-filename": "id.blankon.exambrowser.desktop"
+        },
+        {
+          "type": "file",
+          "path": "id.blankon.exambrowser.appdata.xml",
+          "dest-filename": "id.blankon.exambrowser.appdata.xml"
+        }
+      ]
+    }
+  ]
+}
