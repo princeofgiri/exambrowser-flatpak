@@ -20,7 +20,7 @@
       "build-commands":[
         "mkdir -p /app/exambrowser /app/bin",
         "cp -ra * /app/exambrowser",
-        "ln -s /app/UBNK/exambrowser /app/bin",
+        "ln -s /app/exambrowser/exambrowser /app/bin",
         "mkdir -p /app/share/applications",
         "cp id.blankon.exambrowser.desktop /app/share/applications",
         "mkdir -p /app/share/icons/hicolor/128x128/apps /app/share/icons/hicolor/64x64/apps",
